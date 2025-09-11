@@ -1,0 +1,18 @@
+services:
+  # Backend (Express API)
+  - type: web
+    name: patient-backend
+    env: node
+    rootDir: patient/backend
+    buildCommand: yarn
+    startCommand: yarn start
+    plan: free
+
+  # Frontend (React/Vite)
+  - type: web
+    name: patient-frontend
+    env: node
+    rootDir: patient
+    buildCommand: yarn build
+    startCommand: yarn preview --port 10000
+    plan: free
